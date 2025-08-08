@@ -8,6 +8,10 @@ services:
       - "80:80"
     volumes:
       - ./nginx/conf:/etc/nginx/conf.d:ro
+      - ./backend/static:/app/static
+      - ./backend/media:/app/media
+
+
     depends_on:
       - django
       - next
