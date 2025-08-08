@@ -18,7 +18,7 @@ services:
       context: ./backend
       dockerfile: Dockerfile.dev
     container_name: django
-    command: python manage.py runserver 0.0.0.0:8000
+    command: sh -c "python manage.py migrate && python manage.py createsu && python manage.py runserver 0.0.0.0:8000"
     depends_on:
       - mariadb
     volumes:
